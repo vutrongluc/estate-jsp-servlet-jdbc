@@ -57,11 +57,7 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-<!-- spring aspects -->
-<!-- spring aspects -->
-<!-- spring aspects -->
-<!-- spring aspects -->
-<!-- spring aspects -->
+
 		<!-- spring aspects -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -69,6 +65,11 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
+		<!-- spring security -->
+		<!-- spring security -->
+		<!-- spring security -->
+		<!-- spring security -->
+		<!-- spring security -->
 		<!-- spring security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
