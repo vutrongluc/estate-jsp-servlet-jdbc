@@ -1,0 +1,161 @@
+package com.laptrinhjavaweb.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cell")
+public class CellEntity {
+    @Column(nullable = true)
+    private String nodename;
+    @Column(nullable = true)
+    private String cellname;
+    @Column(nullable = true)
+    private Double pscrambcode;
+    @Column(nullable = true)
+    private Double uarfcndownlink;
+    @Column(nullable = true)
+    private Double lon;
+    @Column(nullable = true)
+    private Double lat;
+    @Column(nullable = true)
+    private Double azimuth;
+
+    public String getNodename() {
+        return nodename;
+    }
+
+    public void setNodename(String nodename) {
+        this.nodename = nodename;
+    }
+
+    public String getCellname() {
+        return cellname;
+    }
+
+    public void setCellname(String cellname) {
+        this.cellname = cellname;
+    }
+
+    public Double getPscrambcode() {
+        return pscrambcode;
+    }
+
+    public void setPscrambcode(Double pscrambcode) {
+        this.pscrambcode = pscrambcode;
+    }
+
+    public Double getUarfcndownlink() {
+        return uarfcndownlink;
+    }
+
+    public void setUarfcndownlink(Double uarfcndownlink) {
+        this.uarfcndownlink = uarfcndownlink;
+    }
+
+    public Double getLon() {
+        return lon;
+    }
+
+    public void setLon(Double lon) {
+        this.lon = lon;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getAzimuth() {
+        return azimuth;
+    }
+
+    public void setAzimuth(Double azimuth) {
+        this.azimuth = azimuth;
+    }
+}
+
+
+
+
+
+package com.laptrinhjavaweb.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "scan")
+public class ScanEntity {
+    @Column(nullable = true)
+    private Double latitude;
+    @Column(nullable = true)
+    private Double longitude;
+    @Column(nullable = true)
+    private Integer psc;
+    @Column(nullable = true)
+    private Integer uarfcn;
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Integer getPsc() {
+        return psc;
+    }
+
+    public void setPsc(Integer psc) {
+        this.psc = psc;
+    }
+
+    public Integer getUarfcn() {
+        return uarfcn;
+    }
+
+    public void setUarfcn(Integer uarfcn) {
+        this.uarfcn = uarfcn;
+    }
+}
+
+
+
+
+
+package com.laptrinhjavaweb.converter;
+
+import com.laptrinhjavaweb.dto.CellDTO;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class CellConverter {
+    @Autowired
+    private ModelMapper modelMapper;
+    public CellDTO convertToDto (CellEntity cellEntity){
+        CellDTO result = modelMapper.map(cellEntity, CellDTO.class);
+        return result;
+    }
+
+    public CellEntity convertToEntity (CellDTO cellDTO){
+        CellEntity result = modelMapper.map(cellDTO, CellEntity.class);
+        return result;
+    }
+}

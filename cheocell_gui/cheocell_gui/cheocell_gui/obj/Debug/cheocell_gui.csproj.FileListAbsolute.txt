@@ -1,0 +1,16 @@
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\cheocell_gui.exe.config
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\cheocell_gui.exe
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\cheocell_gui.pdb
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\LinqToExcel.dll
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\log4net.dll
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\Remotion.Data.Linq.dll
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\Remotion.dll
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\Remotion.Interfaces.dll
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\LinqToExcel.xml
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\bin\Debug\log4net.xml
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\obj\Debug\cheocell_gui.csprojResolveAssemblyReference.cache
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\obj\Debug\cheocell_gui.Form1.resources
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\obj\Debug\cheocell_gui.Properties.Resources.resources
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\obj\Debug\cheocell_gui.csproj.GenerateResource.Cache
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\obj\Debug\cheocell_gui.exe
+C:\Users\cuncon\Desktop\C_shasp\window_form\cheocell_gui\cheocell_gui\cheocell_gui\obj\Debug\cheocell_gui.pdb
