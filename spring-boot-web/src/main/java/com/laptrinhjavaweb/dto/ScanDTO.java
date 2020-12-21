@@ -5,6 +5,15 @@ public class ScanDTO {
     private Double longitude;
     private Double psc;
     private Double uarfcn;
+    private Double anlge;
+
+    public Double getAnlge() {
+        return anlge;
+    }
+
+    public void setAnlge(Double anlge) {
+        this.anlge = anlge;
+    }
 
     public ScanDTO(){}
     public ScanDTO(Double latitude, Double longitude, Double psc, Double uarfcn){

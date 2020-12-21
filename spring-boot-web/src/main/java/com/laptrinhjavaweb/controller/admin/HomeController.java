@@ -3,10 +3,7 @@ package com.laptrinhjavaweb.controller.admin;
 import com.laptrinhjavaweb.constant.BuildingTypeConstant;
 import com.laptrinhjavaweb.constant.DistrictConstant;
 import com.laptrinhjavaweb.constant.TransactionTypeConstant;
-import com.laptrinhjavaweb.dto.AssignmentBuildingDTO;
-import com.laptrinhjavaweb.dto.BuildingDTO;
-import com.laptrinhjavaweb.dto.RentareaDTO;
-import com.laptrinhjavaweb.dto.UserDTO;
+import com.laptrinhjavaweb.dto.*;
 import com.laptrinhjavaweb.service.*;
 import com.laptrinhjavaweb.service.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +49,9 @@ public class HomeController {
     @Autowired
     ICellserviceDAO cellserviceDAO;
 
+    @Autowired
+    ISwapCellService swapCellService;
+
     @RequestMapping(value = "/admin/list", method = RequestMethod.GET)
     public ModelAndView homePage(@ModelAttribute("modelSearch") BuildingDTO buildingDTO, @RequestParam(defaultValue = "-1") Integer id,  @RequestParam(defaultValue = "false") String status ) {
         ModelAndView mav = new ModelAndView("admin/list");
@@ -68,8 +68,12 @@ public class HomeController {
         //  mav.addObject("model", buildingDTO1);
         mav.addObject("district", iDistrict.Disttricts());
 
-        mav.addObject("cell", cellserviceDAO.findAll());
-        mav.addObject("scan", scanService.findAll());
+        List<CellDTO> cellDTOList = cellserviceDAO.findAll();
+        List<ScanDTO> scanDTOList = scanService.findAll();
+
+       // mav.addObject("cell", cellserviceDAO.findAll());
+        //mav.addObject("scan", scanService.findAll());
+        mav.addObject("cellswap", swapCellService.FindSwapCell(5.D,10.D, 40.D, cellDTOList, scanDTOList) );
         //dòng dưới là load district theo constant
         mav.addObject("districtconstant", DistrictConstant.loadDistrictConstant().getMap());
         mav.addObject("staffs", userService.getStaffMaps());

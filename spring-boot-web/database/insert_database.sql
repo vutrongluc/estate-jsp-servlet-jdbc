@@ -107,6 +107,4 @@ INSERT INTO building(name, street, ward, district, type) values('Nhà của Lự
 
 
 
-LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\scanl3.csv"
- INTO TABLE scan FIELDS TERMINATED BY ','
- LINES TERMINATED BY '\n' IGNORE 1 LINES (latitude,longitude,psc,uarfcn);
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\scanl1.csv" INTO TABLE scan FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES (latitude,longitude,psc,uarfcn);

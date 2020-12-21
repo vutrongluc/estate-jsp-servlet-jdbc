@@ -71,6 +71,16 @@
                     <b class="arrow"></b>
                 </li>
             </ul>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/admin/listuser'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Tool Check Cell
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
         </li>
     </ul>
     <div class="sidebar-toggle sidebar-collapse">
