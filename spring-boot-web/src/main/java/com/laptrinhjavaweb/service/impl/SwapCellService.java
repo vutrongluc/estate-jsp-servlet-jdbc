@@ -12,12 +12,13 @@ import java.util.List;
 @Service
 public class SwapCellService implements ISwapCellService {
     @Override
-    public List<CellDTO> FindSwapCell(Double d, Double diempv, Double bw, List<CellDTO> cellDTOList, List<ScanDTO> scanDTOList) {
+    public List<CellDTO> FindSwapCell(double d, double diempv, double bw, List<CellDTO> cellDTOList, List<ScanDTO> scanDTOList) {
 
         List<CellDTO> cellDTOList2 = new ArrayList<>();
+        List<CellDTO> cellDTOListtrue = new ArrayList<>();
         for (CellDTO cellDTO : cellDTOList) {
             for(ScanDTO scanDTO: scanDTOList){
-                if (/*(cellDTO.getPscrambcode() == scanDTO.getPsc()) &&*/ (cellDTO.getUarfcndownlink() == scanDTO.getUarfcn()) /*&& (ToolSwapCell.distance(cellDTO.getLat(), scanDTO.getLatitude(), cellDTO.getLon(), scanDTO.getLongitude()) < d)*/)
+                if ((cellDTO.getPscrambcode() == scanDTO.getPsc()) && (cellDTO.getUarfcndownlink() == scanDTO.getUarfcn()) && (ToolSwapCell.distance(cellDTO.getLat(), scanDTO.getLatitude(), cellDTO.getLon(), scanDTO.getLongitude()) < d))
                 {
                     cellDTO.getDiemList().add(scanDTO);//dòng add điểm vào trong danh sách điểm của cell
                 }
@@ -28,7 +29,7 @@ public class SwapCellService implements ISwapCellService {
 
         for(CellDTO cellDTO : cellDTOList)
         {
-            if(Double.valueOf(cellDTO.getDiemList().size())>diempv)
+            if((double)(cellDTO.getDiemList().size())>diempv)
             {
                 for(ScanDTO scanDTO:cellDTO.getDiemList())
                 {
@@ -44,7 +45,7 @@ public class SwapCellService implements ISwapCellService {
 
         for(CellDTO cellDTO:cellDTOList2)
         {
-            Double anlgeScanDtoAverage = 0.D;
+            double anlgeScanDtoAverage = 0.D;
             for(ScanDTO scanDTO : cellDTO.getDiemList())
             {
                 if(!ToolSwapCell.doTim(cellDTO.getAzimuth(),scanDTO.getAnlge(), bw ))
@@ -54,14 +55,15 @@ public class SwapCellService implements ISwapCellService {
                 anlgeScanDtoAverage = anlgeScanDtoAverage+scanDTO.getAnlge();
             }
 
-            if(Double.valueOf(cellDTO.getDemdiem()) / Double.valueOf(cellDTO.getDiemList().size())> 0.6)
+            if((double)(cellDTO.getDemdiem()) / (double)(cellDTO.getDiemList().size())> 0.6)
             {
                 cellDTO.setSwap(true);
+                cellDTOListtrue.add(cellDTO);
             }
-            cellDTO.setAngleTB(anlgeScanDtoAverage/Double.valueOf(cellDTO.getDiemList().size()));
+            cellDTO.setAngleTB(anlgeScanDtoAverage/(double)(cellDTO.getDiemList().size()));
 
         }
-        return cellDTOList2;
+        return cellDTOListtrue;
 
 
     }

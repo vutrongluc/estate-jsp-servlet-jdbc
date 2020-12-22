@@ -12,7 +12,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <c:url var="buildingListURL" value="/admin/list"/>
-<c:url var="buildingEdit" value="http://localhost:8080/admin/edit"/>
+<c:url var="buildingEdit" value="/admin/edit"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,9 +31,9 @@
             </script>
 
             <ul class="breadcrumb">
-                <li><i class="ace-icon fa fa-home home-icon"></i> <a href="http://localhost:8080/admin/list">Home</a>
+                <li><i class="ace-icon fa fa-home home-icon"></i> <a href="/admin/list">Home</a>
                 </li>
-                <li class="active"><a href="http://localhost:8080/admin/list">Editbuilding</a></li>
+                <li class="active"><a href="/admin/list">Editbuilding</a></li>
             </ul>
             <!-- /.breadcrumb -->
 
@@ -42,7 +42,7 @@
 
         <div class="page-content">
 
-            <form:form commandName="modelSearch" action="http://localhost:8080/api/building"
+            <form:form commandName="modelSearch" action="/api/building"
                        id="listForm2" method="PUT">
                 <form id="formEditBuilding">
                     <div class="form-group">
@@ -554,7 +554,7 @@
             e.preventDefault();
             $('#listForm2').submit();
             console.log($('#listForm2'));
-            /*   location.href = "http://localhost:8080/admin/list";*/
+            /*   location.href = "/admin/list";*/
 
             /* var data = {};
              data['name'] = $('#name').val();
@@ -567,7 +567,7 @@
             e.preventDefault();
             $('#listForm2').submit();
             console.log($('#listForm2'));
-            /*location.href = "http://localhost:8080/admin/list";*/
+            /*location.href = "/admin/list";*/
 
             /* var data = {};
              data['name'] = $('#name').val();
@@ -712,17 +712,17 @@
     function UpdateBuilding(data) {
         $.ajax({
             type: "PUT",
-            url: "http://localhost:8080/api/building",
+            url: "/api/building",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
-                window.location.href = "http://localhost:8080/admin/list?status=capnhatok";
+                window.location.href = "/admin/list?status=capnhatok";
             },
             error: function (response) {
                 console.log('failed');
-                window.location.href = "http://localhost:8080/admin/list?status=capnhatok";
+                window.location.href = "/admin/list?status=capnhatok";
                 console.log(response);
             }
         });
@@ -733,17 +733,17 @@
     function InsertBuilding(data) {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api/building",
+            url: "/api/building",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
-                window.location.href = "http://localhost:8080/admin/list?status=insertok";
+                window.location.href = "/admin/list?status=insertok";
             },
             error: function (response) {
                 console.log('failed');
-                window.location.href = "http://localhost:8080/admin/list?status=insertok";
+                window.location.href = "/admin/list?status=insertok";
                 console.log(response);
             }
         });
@@ -781,19 +781,19 @@
         $.ajax({
 
             type: "POST",
-            url: "http://localhost:8080/api/building",
+            url: "/api/building",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
 
-                window.location.href = "http://localhost:8080/admin/list";
+                window.location.href = "/admin/list";
             },
             error: function (response) {
                 console.log('failed');
                 console.log(response);
-                window.location.href = "http://localhost:8080/admin/list";
+                window.location.href = "/admin/list";
             }
         });
     });
@@ -867,21 +867,21 @@
     function DeleteRentarea(data) {
         $.ajax({
             type: "DELETE",
-            url: "http://localhost:8080/api/rentarea",
+            url: "/api/rentarea",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
 
-                window.location.href = "http://localhost:8080/admin/edit?id=${buildingById.id}";
+                window.location.href = "/admin/edit?id=${buildingById.id}";
 
 
             },
             error: function (response) {
                 console.log('failed');
 
-                window.location.href = "http://localhost:8080/admin/edit?id=${buildingById.id}";
+                window.location.href = "/admin/edit?id=${buildingById.id}";
                 console.log(response);
             }
         });
@@ -892,7 +892,7 @@
     function updateAssignmentBuilding(data) {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api/assignment",
+            url: "/api/assignment",
             //url: "http://10.5.2.227:8080/spring/api/new",
             data: JSON.stringify(data),
             dataType: "json",
@@ -900,14 +900,14 @@
             success: function (response) {
                 console.log('SUCCESS');
 
-                window.location.href = "http://localhost:8080/admin/edit?id=${modelSearch.id}&status=ok";
+                window.location.href = "/admin/edit?id=${modelSearch.id}&status=ok";
 
 
             },
             error: function (response) {
                 console.log('failed');
 
-                window.location.href = "http://localhost:8080/admin/edit?id=${modelSearch.id}&status=ok";
+                window.location.href = "/admin/edit?id=${modelSearch.id}&status=ok";
                 console.log(response);
             }
         });
@@ -916,7 +916,7 @@
     function themdientichthue(data) {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api/rentarea",
+            url: "/api/rentarea",
             //url: "http://10.5.2.227:8080/spring/api/new",
             data: JSON.stringify(data),
             dataType: "json",
@@ -924,14 +924,14 @@
             success: function (response) {
                 console.log('SUCCESS');
 
-                window.location.href = "http://localhost:8080/admin/edit?id=${buildingById.id}&status=themdientichok";
+                window.location.href = "/admin/edit?id=${buildingById.id}&status=themdientichok";
 
 
             },
             error: function (response) {
                 console.log('failed');
 
-                window.location.href = "http://localhost:8080/admin/edit?id=${buildingById.id}&status=themdientichok";
+                window.location.href = "/admin/edit?id=${buildingById.id}&status=themdientichok";
                 console.log(response);
             }
         });

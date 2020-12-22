@@ -10,7 +10,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <c:url var="buildingListURL" value="/admin/list"/>
-<c:url var="buildingEdit" value="http://localhost:8080/admin/edit"/>
+<c:url var="buildingEdit" value="/admin/edit"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -132,21 +132,21 @@
     function DeleteRentarea(data) {
         $.ajax({
             type: "DELETE",
-            url: "http://localhost:8080/api/rentarea",
+            url: "/api/rentarea",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
 
-                window.location.href = "http://localhost:8080/admin/rentarea?id=${buildingById.id}";
+                window.location.href = "/admin/rentarea?id=${buildingById.id}";
 
 
             },
             error: function (response) {
                 console.log('failed');
 
-                window.location.href = "http://localhost:8080/admin/rentarea?id=${buildingById.id}";
+                window.location.href = "/admin/rentarea?id=${buildingById.id}";
                 console.log(response);
             }
         });
@@ -158,7 +158,7 @@
     function editbuilding(data) {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api/rentarea",
+            url: "/api/rentarea",
             //url: "http://10.5.2.227:8080/spring/api/new",
             data: JSON.stringify(data),
             dataType: "json",
@@ -166,14 +166,14 @@
             success: function (response) {
                 console.log('SUCCESS');
 
-                window.location.href = "http://localhost:8080/admin/rentarea?id=${buildingById.id}";
+                window.location.href = "/admin/rentarea?id=${buildingById.id}";
 
 
             },
             error: function (response) {
                 console.log('failed');
 
-                window.location.href = "http://localhost:8080/admin/rentarea?id=${buildingById.id}";
+                window.location.href = "/admin/rentarea?id=${buildingById.id}";
                 console.log(response);
             }
         });

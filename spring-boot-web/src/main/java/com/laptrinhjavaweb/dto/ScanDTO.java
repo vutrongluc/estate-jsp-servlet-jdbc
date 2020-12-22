@@ -1,11 +1,11 @@
 package com.laptrinhjavaweb.dto;
 
 public class ScanDTO {
-    private Double latitude;
-    private Double longitude;
-    private Double psc;
-    private Double uarfcn;
-    private Double anlge;
+    private double latitude;
+    private double longitude;
+    private double psc;
+    private double uarfcn;
+    private double anlge;
 
     public Double getAnlge() {
         return anlge;
@@ -16,42 +16,46 @@ public class ScanDTO {
     }
 
     public ScanDTO(){}
-    public ScanDTO(Double latitude, Double longitude, Double psc, Double uarfcn){
+    public ScanDTO(double latitude, double longitude, double psc, double uarfcn){
         this.latitude =latitude;
         this.longitude = longitude;
         this.psc = psc;
         this.uarfcn = uarfcn;
     }
 
-    public Double getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Double latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public Double getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Double longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public Double getPsc() {
+    public double getPsc() {
         return psc;
     }
 
-    public void setPsc(Double psc) {
+    public void setPsc(double psc) {
         this.psc = psc;
     }
 
-    public Double getUarfcn() {
+    public double getUarfcn() {
         return uarfcn;
     }
 
-    public void setUarfcn(Double uarfcn) {
+    public void setUarfcn(double uarfcn) {
         this.uarfcn = uarfcn;
+    }
+
+    public void setAnlge(double anlge) {
+        this.anlge = anlge;
     }
 }

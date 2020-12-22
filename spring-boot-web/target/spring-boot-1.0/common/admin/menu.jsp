@@ -74,7 +74,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href="<c:url value='/admin/listuser'/>">
+                    <a href="<c:url value='/admin/cell'/>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Tool Check Cell
                     </a>

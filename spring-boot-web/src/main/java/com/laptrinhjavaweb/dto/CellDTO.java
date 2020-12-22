@@ -6,19 +6,19 @@ import java.util.List;
 public class CellDTO {
     private String nodename;
     private String cellname;
-    private Double pscrambcode;
-    private Double uarfcndownlink;
-    private Double lon;
-    private Double lat;
-    private Double azimuth;
+    private double pscrambcode;
+    private double uarfcndownlink;
+    private double lon;
+    private double lat;
+    private double azimuth;
     public List<ScanDTO> DiemList = new ArrayList<>();
-    public Integer demdiem;
+    public int demdiem;
     public boolean swap ;
 
     public double angleTB;
     public CellDTO(){}
 
-    public CellDTO(String nodename, String cellname, Double pscrambcode, Double uarfcndownlink, Double lon, Double lat, Double azimuth  ){
+    public CellDTO(String nodename, String cellname, double pscrambcode, double uarfcndownlink, double lon, double lat, double azimuth  ){
         this.nodename=nodename;
         this.cellname=cellname;
         this.pscrambcode=pscrambcode;
@@ -29,38 +29,6 @@ public class CellDTO {
         this.swap = false;
         this.demdiem = 0;
         this.angleTB = 0;
-    }
-
-    public Integer getDemdiem() {
-        return demdiem;
-    }
-
-    public void setDemdiem(Integer demdiem) {
-        this.demdiem = demdiem;
-    }
-
-    public boolean isSwap() {
-        return swap;
-    }
-
-    public void setSwap(boolean swap) {
-        this.swap = swap;
-    }
-
-    public double getAngleTB() {
-        return angleTB;
-    }
-
-    public void setAngleTB(double angleTB) {
-        this.angleTB = angleTB;
-    }
-
-    public List<ScanDTO> getDiemList() {
-        return DiemList;
-    }
-
-    public void setDiemList(List<ScanDTO> diemList) {
-        DiemList = diemList;
     }
 
     public String getNodename() {
@@ -79,43 +47,75 @@ public class CellDTO {
         this.cellname = cellname;
     }
 
-    public Double getPscrambcode() {
+    public double getPscrambcode() {
         return pscrambcode;
     }
 
-    public void setPscrambcode(Double pscrambcode) {
+    public void setPscrambcode(double pscrambcode) {
         this.pscrambcode = pscrambcode;
     }
 
-    public Double getUarfcndownlink() {
+    public double getUarfcndownlink() {
         return uarfcndownlink;
     }
 
-    public void setUarfcndownlink(Double uarfcndownlink) {
+    public void setUarfcndownlink(double uarfcndownlink) {
         this.uarfcndownlink = uarfcndownlink;
     }
 
-    public Double getLon() {
+    public double getLon() {
         return lon;
     }
 
-    public void setLon(Double lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
 
-    public Double getLat() {
+    public double getLat() {
         return lat;
     }
 
-    public void setLat(Double lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
 
-    public Double getAzimuth() {
+    public double getAzimuth() {
         return azimuth;
     }
 
-    public void setAzimuth(Double azimuth) {
+    public void setAzimuth(double azimuth) {
         this.azimuth = azimuth;
+    }
+
+    public List<ScanDTO> getDiemList() {
+        return DiemList;
+    }
+
+    public void setDiemList(List<ScanDTO> diemList) {
+        DiemList = diemList;
+    }
+
+    public int getDemdiem() {
+        return demdiem;
+    }
+
+    public void setDemdiem(int demdiem) {
+        this.demdiem = demdiem;
+    }
+
+    public boolean isSwap() {
+        return swap;
+    }
+
+    public void setSwap(boolean swap) {
+        this.swap = swap;
+    }
+
+    public double getAngleTB() {
+        return angleTB;
+    }
+
+    public void setAngleTB(double angleTB) {
+        this.angleTB = angleTB;
     }
 }

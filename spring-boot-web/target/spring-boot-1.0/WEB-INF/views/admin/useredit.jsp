@@ -12,7 +12,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <c:url var="buildingListURL" value="/admin/list"/>
-<c:url var="buildingEdit" value="http://localhost:8080/admin/edit"/>
+<c:url var="buildingEdit" value="/admin/edit"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,9 +30,9 @@
             </script>
 
             <ul class="breadcrumb">
-                <li><i class="ace-icon fa fa-home home-icon"></i> <a href="http://localhost:8080/admin/list">Home</a>
+                <li><i class="ace-icon fa fa-home home-icon"></i> <a href="/admin/list">Home</a>
                 </li>
-                <li class="active"><a href="http://localhost:8080/admin/listuser">EditUser</a></li>
+                <li class="active"><a href="/admin/listuser">EditUser</a></li>
             </ul>
             <!-- /.breadcrumb -->
 
@@ -209,19 +209,19 @@
         $.ajax({
 
             type: "POST",
-            url: "http://localhost:8080/api/user",
+            url: "/api/user",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
-                window.location.href = "http://localhost:8080/admin/listuser";
+                window.location.href = "/admin/listuser";
 
             },
             error: function (response) {
                 console.log('failed');
                 console.log(response);
-                window.location.href = "http://localhost:8080/admin/listuser";
+                window.location.href = "/admin/listuser";
             }
         });
     });

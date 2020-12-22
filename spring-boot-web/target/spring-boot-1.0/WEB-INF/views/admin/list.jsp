@@ -264,7 +264,7 @@
 
                     <a flag="info"
                        class="dt-buttons buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
-                       title='thêm tòa nhà' href="http://localhost:8080/admin/edit?id=-1">
+                       title='thêm tòa nhà' href="/admin/edit?id=-1">
 						<span>
 							<i class="fa fa-plus-circle bigger-110 purple"></i>
 						</span>
@@ -326,7 +326,7 @@
 
                                             <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
                                                title='Cập nhật thông tin tòa nhà'
-                                               href="http://localhost:8080/admin/edit?id=${item.id}"><i
+                                               href="/admin/edit?id=${item.id}"><i
                                                     class="fa fa-pencil-square-o">
                                             </i>
                                             </a>
@@ -521,7 +521,7 @@
     function updateAssignmentBuilding(data) {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api/assignment",
+            url: "/api/assignment",
             //url: "http://10.5.2.227:8080/spring/api/new",
             data: JSON.stringify(data),
             dataType: "json",
@@ -529,14 +529,14 @@
             success: function (response) {
                 console.log('SUCCESS');
 
-              window.location.href = "http://localhost:8080/admin/list?status=giaook";
+              window.location.href = "/admin/list?status=giaook";
 
 
             },
             error: function (response) {
                 console.log('failed');
 
-                window.location.href = "http://localhost:8080/admin/list?status=giaook";
+                window.location.href = "/admin/list?status=giaook";
                 console.log(response);
             }
         });
@@ -585,21 +585,21 @@
         $.ajax({
             type: "PUT",
 
-            url: "http://localhost:8080/spring/api/new",
+            url: "/spring/api/new",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
 
-                window.location.href = "http://localhost:8080/spring/quan-tri/bai-viet/building-list";
+                window.location.href = "/spring/quan-tri/bai-viet/building-list";
 
 
             },
             error: function (response) {
                 console.log('failed');
 
-                window.location.href = "http://localhost:8080/spring/quan-tri/bai-viet/building-list";
+                window.location.href = "/spring/quan-tri/bai-viet/building-list";
                 console.log(response);
             }
         });
@@ -609,17 +609,17 @@
     function Insertnhanvien(data) {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/spring/api/new",
+            url: "/spring/api/new",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
-                window.location.href = "http://localhost:8080/spring/quan-tri/bai-viet/building-list";
+                window.location.href = "/spring/quan-tri/bai-viet/building-list";
             },
             error: function (response) {
                 console.log('failed');
-                window.location.href = "http://localhost:8080/spring/quan-tri/bai-viet/building-list";
+                window.location.href = "/spring/quan-tri/bai-viet/building-list";
                 console.log(response);
             }
         });
@@ -657,7 +657,7 @@
             //	url : "http://192.168.1.3:8080/spring/api/new",
             //   url: "http://10.5.2.227:8080/spring/api/new",
             // url: "http://10.5.2.228:8080/spring/api/new",
-            url: "http://localhost:8080/admin/list",
+            url: "/admin/list",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
@@ -691,7 +691,7 @@
                 alert("Đã xóa hàng");
 
             }else{
-                window.location.href = "http://localhost:8080/admin/list";
+                window.location.href = "/admin/list";
             }
 
         });
@@ -724,18 +724,18 @@
             //	url : "http://192.168.1.3:8080/spring/api/new",
             //   url: "http://10.5.2.227:8080/spring/api/new",
             // url: "http://10.5.2.228:8080/spring/api/new",
-            url: "http://localhost:8080/api/building",
+            url: "/api/building",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
-                window.location.href = "http://localhost:8080/admin/list";
+                window.location.href = "/admin/list";
                 windows.onload
             },
             error: function (response) {
                 console.log('failed');
-                window.location.href = "http://localhost:8080/admin/list";
+                window.location.href = "/admin/list";
                 console.log(response);
             }
         });

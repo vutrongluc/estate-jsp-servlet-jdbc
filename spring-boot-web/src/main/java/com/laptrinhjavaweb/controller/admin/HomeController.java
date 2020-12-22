@@ -43,14 +43,7 @@ public class HomeController {
     @Autowired
     IAssignmentBuildingServiceDAO assignmentBuildingServiceDAO;
 
-    @Autowired
-    IScanService scanService;
 
-    @Autowired
-    ICellserviceDAO cellserviceDAO;
-
-    @Autowired
-    ISwapCellService swapCellService;
 
     @RequestMapping(value = "/admin/list", method = RequestMethod.GET)
     public ModelAndView homePage(@ModelAttribute("modelSearch") BuildingDTO buildingDTO, @RequestParam(defaultValue = "-1") Integer id,  @RequestParam(defaultValue = "false") String status ) {
@@ -68,12 +61,12 @@ public class HomeController {
         //  mav.addObject("model", buildingDTO1);
         mav.addObject("district", iDistrict.Disttricts());
 
-        List<CellDTO> cellDTOList = cellserviceDAO.findAll();
-        List<ScanDTO> scanDTOList = scanService.findAll();
+       // List<CellDTO> cellDTOList = cellserviceDAO.findAll();
+       // List<ScanDTO> scanDTOList = scanService.findAll();
 
        // mav.addObject("cell", cellserviceDAO.findAll());
         //mav.addObject("scan", scanService.findAll());
-        mav.addObject("cellswap", swapCellService.FindSwapCell(5.D,10.D, 40.D, cellDTOList, scanDTOList) );
+       // mav.addObject("cellswap", swapCellService.FindSwapCell(5.D,10.D, 40.D, cellDTOList, scanDTOList) );
         //dòng dưới là load district theo constant
         mav.addObject("districtconstant", DistrictConstant.loadDistrictConstant().getMap());
         mav.addObject("staffs", userService.getStaffMaps());

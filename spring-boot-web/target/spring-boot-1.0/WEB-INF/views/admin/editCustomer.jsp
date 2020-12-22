@@ -11,7 +11,7 @@
 <%--
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>--%>
 <%--<c:url var="buildingListURL" value="/admin/list"/>
-<c:url var="buildingEdit" value="http://localhost:8080/admin/edit"/>--%>
+<c:url var="buildingEdit" value="/admin/edit"/>--%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,7 +41,7 @@
 
         <div class="page-content">
 
-            <form:form commandName="modelSearch" action="http://localhost:8080/admin/editCustomer"
+            <form:form commandName="modelSearch" action="/admin/editCustomer"
                        id="listForm2" method="GET">
 
                 <div class="form-group">
@@ -78,31 +78,31 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <c:if test="${not empty findoneCustomer.id}">
-                            <input type="button" class="btn btn-white btn-warning btn-bold" value="Cập nhật thông tin Khách" id="btnUpdateCustomer"/>
+                            <input type="button" class="btn btn-white btn-warning btn-bold"
+                                   value="Cập nhật thông tin Khách" id="btnUpdateCustomer"/>
                         </c:if>
                         <c:if test="${empty findoneCustomer.id}">
-                            <input type="button" class="btn btn-white btn-warning btn-bold" value="Thêm khách hàng" id="btnInsertCustomer"/>
+                            <input type="button" class="btn btn-white btn-warning btn-bold" value="Thêm khách hàng"
+                                   id="btnInsertCustomer"/>
                         </c:if>
                     </div>
                 </div>
 
 
+                <%--   <div class="row">
+                       <div class="col-xs-12">
+                           <button type="button" class="btn btn-primary" id="btnthemtoanhaspringform">Cập nhật thông tin khách hàng
+                           </button>
+                       </div>
+                   </div>
+                   <br>
 
-
-             <%--   <div class="row">
-                    <div class="col-xs-12">
-                        <button type="button" class="btn btn-primary" id="btnthemtoanhaspringform">Cập nhật thông tin khách hàng
-                        </button>
-                    </div>
-                </div>
-                <br>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button type="button" class="btn btn-primary" id="btnThemToaNha">Thêm khách hàng API
-                        </button>
-                    </div>
-                </div>--%>
+                   <div class="row">
+                       <div class="col-xs-12">
+                           <button type="button" class="btn btn-primary" id="btnThemToaNha">Thêm khách hàng API
+                           </button>
+                       </div>
+                   </div>--%>
 
 
             </form:form>
@@ -134,8 +134,6 @@
 <script>
 
 
-
-
     $('#btnUpdateCustomer').click(
         function (e) {
             var data = {};
@@ -145,10 +143,6 @@
             data['id'] = $('#id').val();
             updateCustomer(data);
         });
-
-
-
-
 
 
     $('#btnInsertCustomer').click(function (e) {
@@ -169,17 +163,17 @@
             //				url : "http://192.168.1.3:8080/spring/api/new",
             // url: "http://10.5.2.227:8080/spring/api/new",
             // url: "http://10.5.2.228:8080/spring/api/new",
-            url: "http://localhost:8080/api/customer",
+            url: "/api/customer",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
-                window.location.href = "http://localhost:8080/admin/customer";
+                window.location.href = "/admin/customer";
             },
             error: function (response) {
                 console.log('failed');
-                window.location.href = "http://localhost:8080/admin/customer";
+                window.location.href = "/admin/customer";
                 console.log(response);
             }
         });
@@ -193,23 +187,22 @@
             //				url : "http://192.168.1.3:8080/spring/api/new",
             // url: "http://10.5.2.227:8080/spring/api/new",
             // url: "http://10.5.2.228:8080/spring/api/new",
-            url: "http://localhost:8080/api/customer",
+            url: "/api/customer",
             data: JSON.stringify(data),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
                 console.log('SUCCESS');
-                window.location.href = "http://localhost:8080/admin/customer";
+                window.location.href = "/admin/customer";
             },
             error: function (response) {
                 console.log('failed');
-                window.location.href = "http://localhost:8080/admin/customer";
+                window.location.href = "/admin/customer";
                 console.log(response);
             }
         });
 
     }
-
 
 
 </script>

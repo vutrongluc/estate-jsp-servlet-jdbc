@@ -10,7 +10,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <c:url var="buildingListURL" value="/admin/list"/>
-<c:url var="buildingEdit" value="http://localhost:8080/admin/edit"/>
+<c:url var="buildingEdit" value="/admin/edit"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,7 +23,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="http://localhost:8080/admin/listuser">User</a>
+                    <a href="/admin/listuser">User</a>
                 </li>
             </ul><!-- /.breadcrumb -->
         </div>
@@ -44,7 +44,7 @@
                         <div class="widget-body">
                             <div class="widget-main">
 
-                                <form:form commandName="modelSearch" action="http://localhost:8080/admin/listuser"
+                                <form:form commandName="modelSearch" action="/admin/listuser"
                                            id="listForm" method="GET">
                                     <div class="row">
 
@@ -121,7 +121,7 @@
 
                     <a flag="info"
                        class="dt-buttons buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
-                       title='thêm user' href="http://localhost:8080/admin/edituser">
+                       title='thêm user' href="/admin/edituser">
 						<span>
 							<i class="fa fa-plus-circle bigger-110 purple"></i>
 						</span>
@@ -170,7 +170,7 @@
 
                                         <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
                                            title='chinhr sửa nhân viên'
-                                           href="http://localhost:8080/admin/edituser?id=${item.id}"><i
+                                           href="/admin/edituser?id=${item.id}"><i
                                                 class="fa fa-pencil-square-o">
                                         </i>
                                         </a>

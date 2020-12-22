@@ -6,7 +6,7 @@ public class SystemConstant {
     /*Spring security 4: ROLE_ADMIN, Spring security 3 not required*/
     public static final String USER_ROLE = "ROLE_STAFF";
     public static final String HOME = "/trang-chu";
-    public static final String ADMIN_HOME = "/admin/list";
+    public static final String ADMIN_HOME = "/admin/cell";
     public static final String MODEL = "model";
     public static final String INSERT_SUCCESS = "insert_success";
     public static final String UPDATE_SUCCESS = "update_success";
